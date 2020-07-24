@@ -16,11 +16,7 @@ class Wagon {
     }
 
     shouldQuarantine() {
-        for (let index = 0; index < this.passengers.length; index += 1) {
-            if (this.passengers[index].isHealthy === false) {
-                return true
-            }
-        }
+        return (this.passengers.some(traveler => traveler.isHealthy === false))
     }
 
     totalFood() {
